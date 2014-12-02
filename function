@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function mysql_cmd() {
+    set +o xtrace
+    mysql -u root -p$MYSQL_ROOT_PASSWORD  -e "$@"
+    set -o xtrace
+}
+
+function get_id () {
+    export SERVICE_TOKEN=$ADMIN_TOKEN
+    export SERVICE_ENDPOINT=http://$KEYSTONE_HOST:35357/v2.0
+    echo `"$@" | awk '/ id / { print $4 }'`
+}
+
+function get_tenant {
+    set +o xtrace
+    var=$1;
+    pw=${!var}
+    export SERVICE_TOKEN=$ADMIN_TOKEN
+    export SERVICE_ENDPOINT=http://$KEYSTONE_HOST:35357/v2.0
+    echo $SERVICE_TOKEN
+    pw=`keystone tenant-list | grep $2 | awk '{print $2}'`
+    eval "$var=$pw"
+    set -o xtrace
+}
+
+function get_role {
+    set +o xtrace
+    var=$1;
+    pw=${!var}
+    export SERVICE_TOKEN=$ADMIN_TOKEN
+    export SERVICE_ENDPOINT=http://$KEYSTONE_HOST:35357/v2.0
+    pw=`keystone role-list | grep $2 | awk '{print $2}'`
+    eval "$var=$pw"
+    set -o xtrace
+}

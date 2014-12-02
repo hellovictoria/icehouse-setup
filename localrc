@@ -1,0 +1,68 @@
+#---------------------------------------------
+# QPID Service
+#---------------------------------------------
+QPID_HOST=controller
+
+#---------------------------------------------
+# MySQL Service
+#---------------------------------------------
+MYSQL_HOST=controller
+MYSQL_ROOT_PASSWORD=MYSQL_PASS
+
+#---------------------------------------------
+# Keystone
+#---------------------------------------------
+MYSQL_KEYSTONE_USER=keystone
+MYSQL_KEYSTONE_PASS=KEYSTONE_DBPASS
+
+KEYSTONE_HOST=controller
+ADMIN_PASSWORD=ADMIN_PASS
+ADMIN_TOKEN=admin_token
+SERVICE_TOKEN=$ADMIN_TOKEN
+ADMIN_USER=admin
+SERVICE_TENANT_NAME=service
+
+#---------------------------------------------
+# Glance
+#---------------------------------------------
+MYSQL_GLANCE_USER=glance
+MYSQL_GLANCE_PASS=GLANCE_DBPASS
+KEYSTONE_GLANCE_SERVICE_PASSWORD=GLANCE_PASS
+GLANCE_HOST=controller
+
+#---------------------------------------------
+# nova
+#---------------------------------------------
+MYSQL_NOVA_USER=nova
+MYSQL_NOVA_PASS=NOVA_DBPASS
+NOVA_HOST=controller
+NOVA_IP=192.168.122.166
+KEYSTONE_NOVA_SERVICE_PASSWORD=NOVA_PASS
+
+#----------------------------------------------
+# neutron
+#----------------------------------------------
+MYSQL_NEUTRON_USER=neutron
+MYSQL_NEUTRON_PASS=NEUTRON_DBPASS
+NEUTRON_HOST=controller
+NEUTRON_IP=192.168.122.166
+KEYSTONE_NEUTRON_SERVICE_PASSWORD=NEUTRON_PASS
+NEUTRON_METADATA_PROXY_SECRET=METADATA_SECRET
+INSTANCE_TUNNELS_INTERFACE_IP_ADDRESS=192.168.123.199
+INSTANCE_TUNNELS_INTERFACE_IP_ADDRESS_COM=192.168.123.125
+
+#----------------------------------------------
+# dashboard
+#----------------------------------------------
+DASHBOARD_HOST=controller
+OPENSTACK_HOST=192.168.122.166
+MYSQL_DASHBOARD_PASS=DASHBOARD_DBPASS
+MYSQL_DASHBOARD_USER=dashboard
+
+#----------------------------------------------
+## cinder
+##----------------------------------------------
+MYSQL_CINDER_USER=cinder
+MYSQL_CINDER_PASS=CINDER_DBPASS
+CINDER_HOST=controller
+KEYSTONE_CINDER_SERVICE_PASSWORD=CINDER_PASS
